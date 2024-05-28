@@ -1,9 +1,10 @@
 ﻿function parseCount(number) {
-        if (Number.isNaN(Number.parseFloat(number))) {
+    let parse = Number.parseFloat(number)
+        if (Number.isNaN(parse)) {
             throw new Error("Невалидное значение");
           };
     
-        return Number.parseFloat(number);
+        return parse;
     }; 
 
 function validateCount(string) {
@@ -16,15 +17,16 @@ function validateCount(string) {
 
 class Triangle {
     constructor(a, b, c) {
-        if(a + b > c && a + c > b && b + c > a ) {
-            this.a = a;
-            this.b = b;
-            this.c = c;
-        } else {throw new Error("Треугольник с такими сторонами не существует") } 
+        if(!(a + b > c && a + c > b && b + c > a) ) {
+            throw new Error("Треугольник с такими сторонами не существует")
+        } 
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
     get perimeter() {
-        return parseFloat(this.a + this.b + this.c) ;
+        return this.a + this.b + this.c ;
     }
 
     get area() {
