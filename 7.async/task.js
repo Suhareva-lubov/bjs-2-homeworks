@@ -44,7 +44,7 @@ class AlarmClock {
                 }) 
         }
 
-        this.intervalId = setInterval(asd, 1000);
+        this.intervalId = setInterval(this.asd, 1000);
     }
 
     stop(number){
